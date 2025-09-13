@@ -4,7 +4,7 @@
 # Variables
 RESOURCE_GROUP="tharinduMLRG"
 WORKSPACE_NAME="tharinduMLWorkspace"
-LOCATION="eastus"
+LOCATION="centralindia"
 
 # Ensure Azure CLI is installed and logged in
 echo "Checking Azure CLI authentication..."
@@ -18,17 +18,21 @@ az extension add -n ml --upgrade
 echo "Creating resource group: $RESOURCE_GROUP"
 az group create --name $RESOURCE_GROUP --location $LOCATION
 
-# Create ML workspace
+# Create resource group (this part was working correctly)
+echo "Creating resource group: $RESOURCE_GROUP"
+az group create --name $RESOURCE_GROUP --location $LOCATION
+
+# Create ML workspace - CORRECTED SYNTAX
 echo "Creating ML workspace: $WORKSPACE_NAME"
 az ml workspace create \
-    --workspace-name $WORKSPACE_NAME \
+    --name $WORKSPACE_NAME \
     --resource-group $RESOURCE_GROUP \
     --location $LOCATION
 
-# Verify workspace creation
+# Verify workspace creation - CORRECTED SYNTAX
 echo "Verifying workspace creation..."
 az ml workspace show \
-    --workspace-name $WORKSPACE_NAME \
+    --name $WORKSPACE_NAME \
     --resource-group $RESOURCE_GROUP
 
 echo "Workspace setup complete!"
