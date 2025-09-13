@@ -23,7 +23,7 @@ az ml compute list --workspace-name $WORKSPACE_NAME --resource-group $RESOURCE_G
 # Create a new compute instance
 az ml compute create \
     --name $COMPUTE_NAME \
-    --size Standard_DS3_v2 \
+    --size Standard_F4s_v2 \
     --type ComputeInstance \
     --workspace-name $WORKSPACE_NAME \
     --resource-group $RESOURCE_GROUP \
@@ -151,12 +151,14 @@ done
 # --size Standard_DS3_v2    # 4 vCPUs, 14 GB RAM
 
 # CPU-intensive training
-# --size Standard_D4s_v3    # 4 vCPUs, 16 GB RAM
-# --size Standard_D8s_v3    # 8 vCPUs, 32 GB RAM
+# --size Standard_F4s_v2    # 4 cores, 8GB RAM, 32GB storage
+# --size Standard_F8s_v2    # 8 cores, 16GB RAM, 64GB storage
+# --size Standard_F16s_v2   # 16 cores, 32GB RAM, 128GB storage
 
 # GPU for deep learning
 # --size Standard_NC6s_v3   # 6 vCPUs, 112 GB RAM, 1 V100 GPU
 # --size Standard_NC12s_v3  # 12 vCPUs, 224 GB RAM, 2 V100 GPUs
+
 
 # =============================================================================
 # ISO 8601 DURATION FORMATS
