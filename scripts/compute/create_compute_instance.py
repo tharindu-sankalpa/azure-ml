@@ -24,7 +24,7 @@ class ComputeManager:
         """Create a compute instance."""
         compute_instance = ComputeInstance(
             name="my-ds-instance",
-            size="Standard_DS3_v2",
+            size="Standard_F8s_v2", # 8 cores, 16GB RAM, 64GB storage
             idle_time_before_shutdown="PT30M",
             ssh_public_access_enabled=False,
             description="Development compute instance for data science work"
